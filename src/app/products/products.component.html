@@ -1,0 +1,14 @@
+<input class="form-control me-sm-2  mb-3" type="search" placeholder="Search"  [(ngModel)]="searchPrice">
+ <section *ngFor="let p of listProdcut, let i=index" class="flex-row">
+  <div  *ngIf="p.price<searchPrice || !searchPrice"  class="card text-white bg-success mb-3 p-2" style="max-width: 20rem;">
+    <div class="card-header">{{p.title}}</div>
+    <div class="card-body">
+      <h4 class="card-title">prix: {{p.price}}</h4>
+      <p class="card-text">Likes {{p.like}}</p>
+      <p class="card-text">qt: {{p.quantity}}</p>
+      
+      <button type="button" class="btn btn-secondary" [disabled]="p.quantity==0" (click)="Buy(i)">Buy</button>
+      <button type="button" class="btn btn-secondary"  (click)="Like(i)">Like</button>
+    </div>
+  </div>
+</section>
