@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AddProductComponent {
 
+
+  Save(F: NgForm){
+console.log(F);
+
+  }
 }
