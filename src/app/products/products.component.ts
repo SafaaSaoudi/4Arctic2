@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../Models/product';
 
 @Component({
@@ -10,6 +11,10 @@ export class ProductsComponent implements OnInit {
 
   listProdcut!:Product[];
   searchPrice!:number
+
+  constructor(private R:Router){}
+
+
 ngOnInit(){
   this.listProdcut=[
     {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
@@ -23,4 +28,9 @@ ngOnInit(){
  Like(i:number){
   this.listProdcut[i].like++;
  }
+
+ goToAdd(){
+  this.R.navigate(["products/addProduct"]);
+ }
+
 }

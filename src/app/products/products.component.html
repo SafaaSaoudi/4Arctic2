@@ -1,5 +1,7 @@
+
 <input class="form-control me-sm-2  mb-3" type="search" placeholder="Search"  [(ngModel)]="searchPrice">
- <section *ngFor="let p of listProdcut, let i=index" class="flex-row">
+<div class="row">
+<section  *ngFor="let p of listProdcut, let i=index" class="col-md-4">
   <div  *ngIf="p.price<searchPrice || !searchPrice"  class="card text-white bg-success mb-3 p-2" style="max-width: 20rem;">
     <div class="card-header">{{p.title}}</div>
     <div class="card-body">
@@ -9,6 +11,12 @@
       
       <button type="button" class="btn btn-secondary" [disabled]="p.quantity==0" (click)="Buy(i)">Buy</button>
       <button type="button" class="btn btn-secondary"  (click)="Like(i)">Like</button>
+      <a class="btn btn-secondary" [routerLink]="['updateProduct', p.id]" [queryParams]="{'title':p.title}">Update</a>
     </div>
   </div>
 </section>
+
+<button class="btn btn-primary"  (click)="goToAdd()">New Product</button>
+<a routerLink="addProduct">Add</a>
+
+<router-outlet></router-outlet>

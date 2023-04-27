@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 @NgModule({
@@ -14,7 +18,11 @@ import { ProductsComponent } from './products/products.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    AddProductComponent,
+    HomePageComponent,
+    ErrorPageComponent,
+    UpdateProductComponent
     
   ],
   imports: [
