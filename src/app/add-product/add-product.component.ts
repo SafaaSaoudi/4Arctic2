@@ -10,7 +10,12 @@ export class AddProductComponent {
 
 
   Save(F: NgForm){
-console.log(F);
+console.log(F.value);
+console.log(F.controls['title']);
+console.log(F.controls['title'].value);
+
+
+
 
   }
 }
